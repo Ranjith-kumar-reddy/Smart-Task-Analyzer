@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+   
+    <div class="left-page">
+        <h2 >Add Task</h2>
+
+        <form id="taskForm">
+            <div class="form-group">
+                <label for="title">Title *</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="due_date">Due Date *</label>
+                <input type="date" id="due_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="importance">Importance (1–10) *</label>
+                <input type="number" id="importance" min="1" max="10" value="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estimated_hours">Estimated Hours *</label>
+                <input type="number" id="estimated_hours" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dependencies">Dependencies (comma-separated IDs)</label>
+                <input type="text" id="dependencies" placeholder="e.g. 1,2,3">
+            </div>
+
+            <button type="button" id="addTaskBtn">Add Task</button>
+            <button type="button" id="analyzeBtn">Analyze Tasks</button>
+        </form>
+
+        <h3>Tasks to Analyze</h3>
+        <ul id="taskList"></ul>
+    </div>
+
+    
+    <div class="right-page">
+        <h2>Analysis Results (High → Low Priority)</h2>
+        <div id="results"></div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
